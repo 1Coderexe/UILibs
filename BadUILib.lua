@@ -1073,3 +1073,4 @@ function Library:Init(options)
 	
 	return GUI
 end
+return Library
