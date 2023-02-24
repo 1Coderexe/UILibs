@@ -1,0 +1,27 @@
+Create Main Window:
+local main = Library:Init {
+	name = "UINAME"
+}
+
+Create Tab Using:
+local tab = main:CreateTab {name = "NAME"}
+
+Create Button Using:
+local button = tab:Button {text = "TEXTHERE", callback}
+
+Create Label Using:
+local label = tab:Label {text = "LABELTEXTHERE"}
+
+Create Slider Using:
+local slider = tab:Slider {title = "TITLEHERE", min = 0, max = 100, default = 50, callback}
+
+Create Toggle Using:
+local button = tab:Button {title = "TITLEHERE", callback}
+
+Create Dropdown Using:
+local dropdown = tab:Dropdown{
+	title = "TITLEHERE",
+	callback = function(v) end
+}
+-- Add Items Too Dropdown Using:
+dropdown:Add("value", "id")
