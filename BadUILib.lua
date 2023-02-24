@@ -10,7 +10,7 @@ local lp = players.LocalPlayer
 local mouse = lp:GetMouse()
 local viewport = workspace.CurrentCamera.ViewportSize
 local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
-
+local Hidden = false
 
 local Library = {}
 
@@ -50,7 +50,7 @@ function Library:Init(options)
 		GUI["2"]["BackgroundColor3"] = Color3.fromRGB(51, 51, 51);
 		GUI["2"]["AnchorPoint"] = Vector2.new(0, 0);
 		GUI["2"]["Size"] = UDim2.new(0, 400, 0, 300);
-		GUI["2"]["Position"] = UDim2.fromOffset((viewport.X/2) - (GUI["2"].Size.X.Offset / 2), (viewport.Y/2) - (GUI["2"].Size.Y.Offset / 2));
+		GUI["2"]["Position"] = UDim2.fromOffset((viewport.X/6) - (GUI["2"].Size.X.Offset / 2), (viewport.Y/2) - (GUI["2"].Size.Y.Offset / 2));
 		GUI["2"]["Name"] = [[Main]];
 
 		-- StarterGui.CLib.Main.UICorner
@@ -876,7 +876,7 @@ function Library:Init(options)
 			end
 			
 			-- Methods
-			function Dropdown:Add(value, id)
+			function Dropdown:Add(id, value)
 				local Item = {
 					Hover = false,
 					MouseDown = false
@@ -1042,6 +1042,26 @@ function Library:Init(options)
 		
 		return Tab
 	end
+		
+	function GUI:Hide()
+		Hidden = true
+		GUI["1"].Enabled = false
+	end
+	
+	function GUI:Show()
+		Hidden = false
+		GUI["1"].Enabled = true
+	end
+	
+	mouse.KeyDown:Connect(function(key)
+		if key == string.lower(Enum.KeyCode.H.Name) then
+			if Hidden then
+				GUI:Show()
+			else
+				GUI:Hide()
+			end
+		end
+	end)
 	
 	return GUI
 end
