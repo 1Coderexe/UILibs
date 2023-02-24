@@ -1063,5 +1063,13 @@ function Library:Init(options)
 		end
 	end)
 	
+	mouse.KeyDown:Connect(function(key)
+		if key == string.lower(Enum.KeyCode.J.Name) then
+			GUI["1"] = nil
+		end
+	end)
+	
+	
+	
 	return GUI
 end
