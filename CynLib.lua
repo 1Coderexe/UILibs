@@ -476,3 +476,21 @@ end
 	
 	return GUI
 end
+
+local UI = Library:Init()
+UI:AddUtilScript {
+  scriptString = "game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source')",
+  scriptName = "Infinite Yield",
+}
+
+UI:AddGameScript {
+  scriptString = "game:HttpGet('https://raw.githubusercontent.com/Butterisgood/butter-hub/main/Butterhub.txt')",
+  scriptName = "Butter GUI",
+  placeId = 13822889
+}
+
+UI:AddGameScript {
+  scriptString = "game:HttpGet('https://bit.ly/3x90l99')",
+  scriptName = "Toads GUI",
+  placeId = 13822889
+}
