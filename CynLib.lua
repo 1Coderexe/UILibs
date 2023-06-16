@@ -477,7 +477,7 @@ end
 	return GUI
 end
 
-local UI = Library:Init()
+UI = Library:Init()
 UI:AddUtilScript {
   scriptString = "game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source')",
   scriptName = "Infinite Yield",
